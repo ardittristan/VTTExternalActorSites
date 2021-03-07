@@ -83,14 +83,6 @@
             <div class="item-name skill-name rollable"  title="{{skill.name}}">{{skill.name}}</div>
             <div class="item-score">{{skill.data.value}}</div>
             <div class="item-controls">
-              {{#unless skill.data.properties.noxpgain}}
-                {{#if skill.data.flags.developement}}
-                  <a class="item-control development-flag active" title="{{localize 'CoC7.SkillUnflagForDevelopement'}}"><i class="fas fa-certificate"></i></a>
-                {{else}}
-                  <a class="item-control development-flag" title="{{localize 'CoC7.SkillFlagForDevelopement'}}"><i class="fas fa-certificate"></i></a>
-                {{/if}}
-              {{/unless}}
-              <a class="item-control item-popup" title="{{localize 'CoC7.SkillDetail'}}"><i class="fas fa-info-circle"></i></a>
             </div>
           {{else}}
             <div class="item-name">
@@ -119,15 +111,6 @@
             <div class="item-name skill-name rollable"  title="{{skill.name}}">{{skill.name}}</div>
             <div class="item-score">{{skill.data.value}}</div>
             <div class="item-controls">
-              {{#unless skill.data.properties.noxpgain}}
-                <!-- <a class="item-control inactive" title="{{localize 'CoC7.SkillCantGainXp'}}"><i class="fas fa-certificate"></i></a> -->
-                {{#if skill.data.flags.developement}}
-                  <a class="item-control development-flag active" title="{{localize 'CoC7.SkillUnflagForDevelopement'}}"><i class="fas fa-certificate"></i></a>
-                {{else}}
-                  <a class="item-control development-flag" title="{{localize 'CoC7.SkillFlagForDevelopement'}}"><i class="fas fa-certificate"></i></a>
-                {{/if}}
-              {{/unless}}
-              <a class="item-control item-popup" title="{{localize 'CoC7.SkillDetail'}}"><i class="fas fa-info-circle"></i></a>
             </div>
           {{else}}
             <div class="item-name">

@@ -164,6 +164,9 @@ function getData(data, baseUrl) {
         });
       }
     }
+    if (typeof skill.data.base === "string" || typeof skill.data.base === "number") {
+      skill.data.value = (skill.data.base * 1) + (skill.data.adjustments.experience * 1 || 0)
+    }
     data.skillList.push(skill);
   }
   //#endregion
@@ -370,13 +373,14 @@ function getChatData(htmlOptions, item) {
   const data = JSON.parse(JSON.stringify(item.data));
   console.log(data)
   //Fix : data can have description directly in field, not under value.
-  if (data.description && !data.description.value) {
+  if (typeof data.description === "string" && !data.description.value) {
     const value = data.description;
     data.description = {
       value: value,
     };
   }
   const labels = [];
+  console.log(data.description)
 
   // Rich text description
   data.description.value = TextEditor.enrichHTML(data.description.value, htmlOptions);

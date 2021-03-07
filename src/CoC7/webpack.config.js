@@ -31,7 +31,7 @@ module.exports = merge(process.env.NODE_ENV == "development" ? devOptions : glob
     }),
     new HtmlWebpackInjectStringPlugin({
       search: "<!-- headInject -->",
-      inject: `<script src="${process.env.WORKFLOW_PATH}/TextEditor.js"></script>`,
+      inject: `<script src="${process.env.WORKFLOW_PATH || ""}/TextEditor.js"></script>`,
     }),
     new CopyPlugin({
       patterns: [
