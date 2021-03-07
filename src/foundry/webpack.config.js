@@ -35,13 +35,14 @@ module.exports = merge(globalOptions, {
           arr.forEach(
             (name, i) =>
               (arr[i] = {
-                url: process.env.WORKFLOW_PATH?.length > 0 ? process.env.WORKFLOW_PATH + `/${name}` : name,
+                url: name,
                 name: require(path.resolve(source, name, "manifest.json"))?.title || name,
               })
           );
 
           return arr;
         })(path.resolve(__dirname, "../")),
+        path: process.env.WORKFLOW_PATH
       },
       partials: [],
       helpers: {},

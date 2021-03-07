@@ -27,15 +27,15 @@ module.exports = merge(process.env.NODE_ENV == "development" ? devOptions : glob
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "../index.html"),
-      publicPath: manifest.path,
-      path: process.env.WORKFLOW_PATH?.length > 0 ? process.env.WORKFLOW_PATH : "",
+      publicPath: process.env.WORKFLOW_PATH?.length > 0 ? process.env.WORKFLOW_PATH + manifest.path : manifest.path,
+      path: process.env.WORKFLOW_PATH || "",
       inject: false,
       title: manifest.title,
       minify: false,
     }),
     new HtmlWebpackInjectStringPlugin({
       search: "<!-- headInject -->",
-      inject: '<script src="/TextEditor.js"></script>',
+      inject: `<script src="${process.env.WORKFLOW_PATH}/TextEditor.js"></script>`,
     }),
   ],
 });
