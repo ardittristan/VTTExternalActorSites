@@ -369,9 +369,7 @@ function activateListeners(data) {
 /* -------------------------------------------- */
 
 function getChatData(htmlOptions, item) {
-  console.log(item)
   const data = JSON.parse(JSON.stringify(item.data));
-  console.log(data)
   //Fix : data can have description directly in field, not under value.
   if (typeof data.description === "string" && !data.description.value) {
     const value = data.description;
@@ -380,7 +378,6 @@ function getChatData(htmlOptions, item) {
     };
   }
   const labels = [];
-  console.log(data.description)
 
   // Rich text description
   data.description.value = TextEditor.enrichHTML(data.description.value, htmlOptions);
