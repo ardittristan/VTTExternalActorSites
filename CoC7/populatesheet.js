@@ -1817,9 +1817,7 @@ function activateListeners(data) {
 
 
 function getChatData(htmlOptions, item) {
-  console.log(item);
-  const data = JSON.parse(JSON.stringify(item.data));
-  console.log(data); //Fix : data can have description directly in field, not under value.
+  const data = JSON.parse(JSON.stringify(item.data)); //Fix : data can have description directly in field, not under value.
 
   if (typeof data.description === "string" && !data.description.value) {
     const value = data.description;
@@ -1828,8 +1826,7 @@ function getChatData(htmlOptions, item) {
     };
   }
 
-  const labels = [];
-  console.log(data.description); // Rich text description
+  const labels = []; // Rich text description
 
   data.description.value = TextEditor.enrichHTML(data.description.value, htmlOptions);
   data.description.value = CoC7Parser_CoC7Parser.enrichHTML(data.description.value);
