@@ -22,6 +22,8 @@ jobs:
         uses: bahmutov/npm-install@v1
       - name: Build Application
         run: node ./build.js
+        env:
+          WORKFLOW_PATH: /VTTExternalActorViewers
       - name: Deploy
         uses: s0/git-publish-subdir-action@develop
         env:

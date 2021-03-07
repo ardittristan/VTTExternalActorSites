@@ -35,7 +35,7 @@ module.exports = merge(globalOptions, {
           arr.forEach(
             (name, i) =>
               (arr[i] = {
-                url: name,
+                url: process.env.WORKFLOW_PATH?.length > 0 ? process.env.WORKFLOW_PATH + name : name,
                 name: require(path.resolve(source, name, "manifest.json"))?.title || name,
               })
           );

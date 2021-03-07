@@ -28,6 +28,7 @@ module.exports = merge(process.env.NODE_ENV == "development" ? devOptions : glob
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "../index.html"),
       publicPath: manifest.path,
+      path: process.env.WORKFLOW_PATH?.length > 0 ? process.env.WORKFLOW_PATH : "",
       inject: false,
       title: manifest.title,
       minify: false,
