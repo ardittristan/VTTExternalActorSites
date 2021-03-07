@@ -1,9 +1,13 @@
 const path = require("path");
 const empty = require("empty-folder");
+const { existsSync, mkdirSync } = require("fs");
 const { exec } = require("child_process");
 const FileHound = require("filehound");
+const dist = path.join(__dirname, "dist");
 
-empty(path.join(__dirname, "dist"), false, (o) => {
+if (!existsSync(dist)) mkdirSync(dist);
+
+empty(dist, false, (o) => {
   if (o.error) console.error(o.error);
 
   FileHound.create()
