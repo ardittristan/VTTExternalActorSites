@@ -1,0 +1,35 @@
+<div class="sidebar_title">
+  <h2>{{stringify 'PF2E.ResistancesLabel'}}</h2>
+</div>
+
+<ol class="resistances tags">
+  {{#each data.traits.dr.selected as |v k|}}
+    <li class="tag {{k}}">
+      {{v}}
+    </li>
+  {{/each}}
+</ol>
+
+<div class="sidebar_title">
+  <h2>{{stringify 'PF2E.WeaknessesLabel'}}</h2>
+</div>
+
+<ol class="weaknesses tags">
+  {{#each data.traits.dv.selected as |v k|}}
+    <li class="tag {{k}}">
+      {{v}}
+    </li>
+  {{/each}}
+</ol>
+
+<div class="sidebar_title">
+  <h2>{{stringify 'PF2E.ImmunitiesLabel'}}</h2>
+</div>
+
+<ol class="immunities tags">
+  {{#each data.traits.di.selected as |v k|}}
+    <li class="tag {{k}}">
+      {{v}}
+    </li>
+  {{/each}}
+</ol>

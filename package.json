@@ -1,0 +1,73 @@
+{
+  "name": "vttexternalactorsites",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node build.js",
+    "build:lib": "./node_modules/.bin/webpack --config \"src/foundry/webpack.config.js\" --mode production",
+    "build:callofcthulhu": "./node_modules/.bin/webpack --config \"src/callofcthulhu/webpack.config.js\" --mode production",
+    "build:CoC7": "./node_modules/.bin/webpack --config \"src/CoC7/webpack.config.js\" --mode production",
+    "build:dnd5e": "./node_modules/.bin/webpack --config \"src/dnd5e/webpack.config.js\" --mode production",
+    "build:pf2e": "./node_modules/.bin/webpack --config \"src/pf2e/webpack.config.js\" --mode production",
+    "serve:lib": "./node_modules/.bin/webpack --watch --config \"src/foundry/webpack.config.js\" --mode development",
+    "serve:callofcthulhu": "cross-env NODE_ENV=development MNAME=callofcthulhu ./node_modules/.bin/webpack serve --config \"src/callofcthulhu/webpack.config.js\" --mode development",
+    "serve:CoC7": "cross-env NODE_ENV=development MNAME=CoC7 ./node_modules/.bin/webpack serve --config \"src/CoC7/webpack.config.js\" --mode development",
+    "serve:dnd5e": "cross-env NODE_ENV=development MNAME=dnd5e ./node_modules/.bin/webpack serve --config \"src/dnd5e/webpack.config.js\" --mode development",
+    "serve:pf2e": "cross-env NODE_ENV=development MNAME=pf2e ./node_modules/.bin/webpack serve --config \"src/pf2e/webpack.config.js\" --mode development"
+  },
+  "author": "ardittristan",
+  "license": "MIT",
+  "dependencies": {
+    "dot-prop": "^6.0.1",
+    "escape-string-regexp": "^4.0.0",
+    "splice-string": "^2.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.8",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/preset-env": "^7.13.9",
+    "@types/eventemitter3": "^2.0.2",
+    "@types/jquery": "^3.5.5",
+    "babel-loader": "^8.2.2",
+    "babel-polyfill": "^6.26.0",
+    "copy-webpack-plugin": "^6.4.1",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.1.1",
+    "empty-folder": "^2.0.4",
+    "filehound": "^1.17.4",
+    "handlebars": "^4.7.7",
+    "handlebars-loader": "^1.7.1",
+    "handlebars-webpack-plugin": "^2.2.1",
+    "html-webpack-inject-string-plugin": "^1.0.2",
+    "html-webpack-plugin": "^4.5.2",
+    "less": "^4.1.1",
+    "less-loader": "^7.3.0",
+    "mini-css-extract-plugin": "^1.3.9",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "sass": "^1.32.8",
+    "sass-loader": "^10.1.1",
+    "style-loader": "^2.0.0",
+    "terser-webpack-plugin": "^4.2.3",
+    "url-loader": "^4.1.1",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.7.3"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
+  },
+  "browserslist": [
+    "chrome 79",
+    "opera 66",
+    "firefox 73",
+    "edge 79",
+    "safari 13"
+  ]
+}

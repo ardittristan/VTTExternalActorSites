@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700;800&display=swap");
+@import url("https://rsms.me/inter/inter.css");
+@font-face {
+  font-family: "Nodesto";
+  src: url("../fonts/NodestoCapsCondensed.otf");
+}
+@font-face {
+  font-family: "Pathfinder2eActions";
+  src: url("../fonts/Pathfinder2eActions.ttf");
+}
+
+.window-content {
+  height: calc(100% - var(--headerHeight));
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  padding: 8px;
+  color: #191813;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.window-content .crb-style {
+  flex: 1;
+}
+
+.window-content input,
+.window-content label,
+.window-content select {
+  pointer-events: none !important;
+}
+
+.window-content .roll-icon,
+.window-content .player-image,
+.window-content .dots *,
+.window-content .plaque span,
+.window-content .save-rank,
+.window-content button.tag,
+.window-content a.entity-link,
+.window-content a.inline-roll,
+.window-content .item-image,
+.window-content .item-icon,
+.window-content .item-toggle-equip,
+.window-content .item-toggle-container,
+.window-content .pf-value.pf-rank,
+.window-content .rollable {
+  cursor: default !important;
+}
+
+.window-content .shield.hp .data-value:hover #shield-hp,
+.window-content button.tag:hover,
+.window-content a.entity-link:hover,
+.window-content a.inline-roll:hover {
+  text-shadow: none !important;
+}
+
+.item-create .fa-plus,
+.inventory-browse .fa-search,
+.window-content .item-decrease-quantity,
+.window-content .item-increase-quantity {
+  visibility: hidden;
+}
+
+.crb-style .sheet-content .directory-list .item .item-summary p {
+  white-space: break-spaces;
+}
+
+.bio-alignment.pf-value.pf-small {
+  font-weight: 700;
+  display: block;
+  font-size: 14px;
+  margin-top: 2px;
+  text-transform: capitalize;
+  line-height: 1;
+}
+
+body {
+  background-color: #2f2f2f;
+}
+.window-content select {
+  appearance: none;
+}
+div.errorDiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+div.errorDiv > div {
+  position: relative;
+  height: 100%;
+  width: calc(100% - 181px - 8px);
+  pointer-events: none;
+}
+div.errorDiv > div > p {
+  color: burlywood;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-size: xxx-large;
+}
+form#siteUrlForm > * {
+  color: darksalmon;
+  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-size: 24px;
+  font-weight: lighter;
+  text-align: center;
+}
+form#siteUrlForm > input#siteUrl {
+  margin: 2px;
+}
+form#siteUrlForm > button {
+  margin: 0 2px 0 1px;
+  padding: 0;
+  background: rgba(255, 0, 0, 0.2);
+}
+form#siteUrlForm > button:hover {
+  background: rgba(255, 0, 0, 0.4);
+}
+.titleDiv {
+  display: inline-block;
+  width: 181px;
+  color: burlywood;
+  text-align: center;
+  font-size: xx-large;
+  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  margin: 1px;
+  padding: 2px;
+  line-height: 1em;
+}
+.formDiv {
+  display: inline-block;
+  width: calc(100% - 181px - 8px);
+}

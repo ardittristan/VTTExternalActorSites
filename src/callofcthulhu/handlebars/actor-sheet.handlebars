@@ -1,0 +1,220 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+  {{! status }}
+  <header class="sheet-header">
+    <img
+      class="profile-img"
+      src="{{actor.img}}"
+      data-edit="img"
+      title="{{actor.name}}"
+      height="100"
+      width="100"
+    />
+    <div class="header-fields">
+      <h2 class="charname">
+        <input
+          name="name"
+          type="text"
+          value="{{actor.name}}"
+          placeholder="{{localize "Character Name"}}"
+        />
+      </h2>
+      <div class="resource grid grid-3col">
+        <div class="resource flex-group-center">
+          <label for="data.health.value" class="resource-label">
+            {{localize "HP"}}
+          </label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input
+              type="text"
+              name="data.health.value"
+              value="{{data.health.value}}"
+              data-dtype="Number"
+            />
+            <span>
+              /
+            </span>
+            <input
+              type="text"
+              name="data.health.max"
+              value="{{data.health.max}}"
+              data-dtype="Number"
+            />
+          </div>
+        </div>
+        <div class="resource flex-group-center">
+          <label for="data.power.value" class="resource-label">
+            {{localize "MP"}}
+          </label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input
+              type="text"
+              name="data.power.value"
+              value="{{data.power.value}}"
+              data-dtype="Number"
+            />
+            <span>
+              /
+            </span>
+            <input
+              type="text"
+              name="data.power.max"
+              value="{{data.power.max}}"
+              data-dtype="Number"
+            />
+          </div>
+        </div>
+        <div class="header-fields flex-group-center">
+          <label for="data.luck.value" class="resource-label">
+            {{localize "Luck"}}
+          </label>
+          <div class="attribute-value left">
+            <input
+              name="data.luck.value"
+              type="text"
+              value="{{data.luck.value}}"
+              data-dtype="Number"
+            />
+          </div>
+        </div>
+        {{! Status setting }}
+        <div class="abilities grid grid-3col">
+          <div class="ability flexrow flex-group-center">
+            <label for="data.san.value" class="resource-label">
+              <span class="ability-mod">
+                {{localize "Sanity"}}
+              </span>
+            </label>
+            <div class="ability-content flexrow flex-center flex-between">
+              <input
+                name="data.san.value"
+                type="text"
+                value="{{data.san.value}}"
+                data-dtype="Number"
+              />
+              <span lass="ability-mod">
+                /
+              </span>
+              <input
+                name="data.san.max"
+                type="text"
+                value="{{data.san.max}}"
+                data-dtype="Number"
+              />
+            </div>
+          </div>
+          <div class="ability flexrow flex-group-center">
+            <label for="data.indete.value" class="resource-label">
+              <span class="ability-mod">
+                {{localize "Indef"}}
+              </span>
+            </label>
+            <input
+              name="data.indete.value"
+              type="text"
+              value="{{data.indete.value}}"
+              data-dtype="Number"
+            />
+          </div>
+          <div class="ability flexrow flex-group-center">
+            <label for="data.armor.max" class="resource-label">
+              <span class="ability-mod">
+                {{localize "armor"}}
+              </span>
+            </label>
+            <input
+              name="data.armor.max"
+              type="text"
+              value="{{data.armor.max}}"
+              data-dtype="Number"
+            />
+          </div>
+          <div class="ability flexrow flex-group-center">
+            <label for="data.ward.max" class="resource-label">
+              <span class="ability-mid">
+                {{localize "Flesh ward"}}
+              </span>
+            </label>
+            <input
+              name="data.ward.max"
+              type="text"
+              value="{{data.ward.max}}"
+              data-dtype="Number"
+            />
+          </div>
+          <div class="ability flexrow flex-group-center">
+            <label for="data.dex.max" class="resource-label">
+              <span class="ability-mod">
+                {{localize "DEX"}}
+              </span>
+            </label>
+            <input
+              name="data.dex.max"
+              type="text"
+              value="{{data.dex.max}}"
+              data-dtype="Number"
+            />
+          </div>
+          <div class="ability flexrow flex-group-center">
+            <label for="data.mov.max" class="resource-label">
+              <span class="ability-mod">
+                {{localize "Move"}}
+              </span>
+            </label>
+            <input
+              name="data.mov.max"
+              type="text"
+              value="{{data.mov.max}}"
+              data-dtype="Number"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  {{! Sheet Tab Navigation }}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="description">
+      {{localize "Character sheet"}}
+    </a>
+    <a class="item" data-tab="items">
+      {{localize "Item"}}
+    </a>
+  </nav>
+  {{! Sheet Body }}
+  <section class="sheet-body">
+    {{! Description Tab }}
+    <div class="tab biography" data-group="primary" data-tab="description">
+      <div class="editor">
+        <div class="editor-content">
+          {{{data.biography}}}
+        </div>
+      </div>
+    </div>
+    {{! Owned Items Tab }}
+    <div class="tab items" data-group="primary" data-tab="items">
+      <ol class="items-list">
+        <li class="item flexrow item-header">
+          <div class="item-image"></div>
+          <div class="item-name">
+            {{localize "name"}}
+          </div>
+        </li>
+        {{#each actor.items as |item id|}}
+          <li class="item flexrow" data-item-id="{{item._id}}">
+            <div class="item-image">
+              <img
+                src="{{item.img}}"
+                title="{{item.name}}"
+                width="24"
+                height="24"
+              />
+            </div>
+            <h4 class="item-name">
+              {{item.name}}
+            </h4>
+          </li>
+        {{/each}}
+      </ol>
+    </div>
+  </section>
+</form>

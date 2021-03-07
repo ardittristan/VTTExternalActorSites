@@ -1,0 +1,949 @@
+.invisible {
+  display: none;
+}
+
+.chat-card.range .card-buttons button {
+  height: 20px;
+  line-height: 16px;
+}
+
+.button {
+  display: inline-block;
+  margin: 2px 2px 0 0;
+  padding: 0 3px;
+  font-size: 12px;
+  line-height: 16px;
+  border: 1px groove #999;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.button:hover {
+  text-shadow: 0 0 8px red;
+  border: 1px solid #999;
+}
+
+.button.inactive {
+  border: 1px solid white;
+  color: white;
+}
+
+.button.inactive:hover {
+  cursor: not-allowed;
+  background-color: transparent;
+}
+
+.center-vertical {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.card-result {
+  margin-bottom: 5px;
+}
+
+.sheet .cash label {
+  margin: 0;
+  padding: 3px;
+  border: 0;
+  height: auto;
+}
+
+.sheet .cash span {
+  line-height: 22px;
+}
+
+.sheet .cash input[type="text"],
+.sheet .cash input[type="number"] {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  height: 22px;
+}
+
+.sheet .cash input[type="text"]:hover {
+  border: 0;
+}
+
+.sheet .cash textarea {
+  height: 100%;
+  resize: vertical;
+  margin: 0;
+  border: 0;
+  font-family: "Modesto", "Signika", "Palatino Linotype", "serif";
+  font-size: 12px;
+  white-space: pre-line;
+}
+
+.sheet .cash .cash-row {
+  flex: initial;
+}
+
+.sheet .item-controls a.item-control.inactive:hover {
+  text-shadow: none;
+  cursor: unset;
+}
+
+.chat-card .dropbtn {
+  font-size: 10px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.chat-card .dropdown:hover,
+.chat-card .toggle-switch:hover {
+  background-color: lightgray;
+}
+
+.chat-card .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.chat-card .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 100px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.chat-card .dropdown-content a {
+  color: black;
+  text-decoration: none;
+  display: block;
+}
+
+.chat-card .dropdown a:hover {
+  background-color: #ddd;
+  text-shadow: 0 0 8px red;
+}
+
+.chat-card .show {
+  display: block;
+}
+
+.chat-card label {
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.chat-card .defender-action-select {
+  border-bottom: groove 2px #fff;
+}
+
+.chat-card .response-selection {
+  margin-bottom: 2px;
+}
+
+.auto-on {
+  padding-left: 4px;
+  line-height: 22px;
+  color: green;
+}
+
+.auto-off {
+  padding-left: 4px;
+  line-height: 22px;
+  color: grey;
+}
+
+.sheet .status-monitor {
+  flex: 0 0 25px;
+  color: darkgrey;
+  padding: 1px 6px;
+  text-align: center;
+}
+
+.sheet .status-monitor.invert {
+  transform: rotateZ(180deg);
+}
+.sheet .status-monitor.status-on {
+  color: darkred;
+}
+
+.sheet.npc select {
+  width: 100px;
+  height: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border: 1px solid whitesmoke;
+}
+
+.sheet.npc .item-controls {
+  height: auto;
+  font-size: 10px;
+}
+.sheet.npc select option {
+  width: 100px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.sheet.npc .toggle-switch {
+  margin: 1px 1px 0 0;
+  padding: 0 2px;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.item-tag {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  display: inline-block;
+  margin: 0 2px 0 0;
+  padding: 0 3px;
+  font-size: 11px;
+  line-height: 14px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.weapon-name {
+  height: 18px;
+  padding: 1px 0 1px 2px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.no-skill-set {
+  background-color: red;
+}
+
+.dice-roll .dice-total.critical {
+  background-color: palegreen;
+}
+
+.dice-roll .dice-total.fumble {
+  background-color: darkred;
+}
+
+.dice-roll .dice-total.regular-success {
+  background-color: #ffcc99;
+  color: #cc6600;
+}
+
+.dice-roll .dice-total.hard-success {
+  background-color: #ffff99;
+  color: #cc9900;
+}
+
+.dice-roll .dice-total.extreme-success {
+  background-color: #ccff99;
+  color: #009933;
+}
+
+.dice-roll .dice-formula.success {
+  color: green;
+}
+.dice-roll .dice-formula.failure {
+  color: red;
+}
+
+.dice-roll .dice-formula.critical {
+  background-color: whitesmoke;
+  color: goldenrod;
+}
+
+.dice-roll .dice-formula.fumble {
+  background-color: black;
+  color: crimson;
+}
+
+.dice-roll .dice-formula .roll-icons.success {
+  color: goldenrod;
+}
+.dice-roll .dice-formula .roll-icons.critical {
+  color: goldenrod;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.dice-roll .dice-formula .roll-icons.failure {
+  color: crimson;
+}
+
+.dice-roll .dice-formula .roll-icons.fumble {
+  color: crimson;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.item-image {
+  height: 24px;
+  flex: 0 0 24px;
+  background-size: 24px;
+  margin-right: 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.item-image:hover,
+.skill-image:hover {
+  background-image: var(--d20-grey) !important;
+}
+
+.weapon-image {
+  flex: 0 0 24px;
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.weapon-image:hover {
+  background-image: var(--d20-grey) !important;
+}
+
+.item-summary {
+  flex: 0 0 100%;
+  font-size: 10px;
+  line-height: 11px;
+  padding: 0.25em 0.5em;
+  border-top: 1px solid #c9c7b8;
+}
+
+form {
+  flex: 1;
+  height: 100%;
+}
+
+.tag {
+  display: inline-block;
+  margin: 0 2px 0 0;
+  padding: 0 3px;
+  font-size: 9px;
+  line-height: 12px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.toggle-switch,
+.weapon-property,
+.radio-switch,
+.panel-switch {
+  display: inline-block;
+  margin: 2px 2px 0 0;
+  padding: 0 3px;
+  font-size: 10px;
+  line-height: 16px;
+  border: 1px solid whitesmoke;
+  border-radius: 3px;
+  background: transparent;
+  font-style: italic;
+  color: grey;
+}
+
+.toggle-switch.inactive,
+.simple-flag.inactive {
+  border: 1px solid white;
+  color: white;
+}
+
+.toggle-switch.inactive:hover,
+.simple-flag.inactive:hover {
+  cursor: not-allowed;
+  background-color: transparent;
+}
+
+.malfunction {
+  text-align: center;
+  padding-top: 5px;
+  color: red;
+  font-size: 15px;
+}
+
+.switched-on {
+  border: 1px solid red;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 4px red;
+  color: black;
+  font-style: normal;
+}
+
+.switched-off {
+  display: none;
+}
+
+label {
+  flex: 0;
+  height: 22px;
+  font-weight: bold;
+  margin: 0;
+  white-space: nowrap;
+  width: calc(100% - 2px);
+  padding: 1px 3px;
+  margin: 0 0 1px 0;
+  border: 1px solid transparent;
+}
+
+.sheet .sheet-body .editor {
+  width: 100%;
+  height: 100%;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  flex: 1;
+  height: 22px;
+  border: 1px solid #7a7971;
+  margin: 0 0 1px 0;
+  background: rgba(0, 0, 0, 0.05);
+  color: #191813;
+}
+
+.sheet .editor {
+  height: 100%;
+}
+
+.sheet .item-fields {
+  flex: 1;
+  height: 100px;
+}
+
+.sheet .editor .tox-toolbar-overlord,
+.sheet .editor .tox-toolbar__primary {
+  background: none;
+}
+
+.sheet .skills-list {
+  list-style: none;
+  margin: 7px 0;
+  padding: 0;
+  overflow-y: auto;
+}
+
+.sheet .skills-list .item {
+  width: 320px;
+  line-height: 20px;
+  border-bottom: 1px solid #bbb;
+}
+
+.sheet .skills-list .item img {
+  flex: 0 0 24px;
+  margin-right: 5px;
+  object-fit: contain;
+  border: none;
+}
+.sheet .skills-list .skill-name {
+  margin: 0;
+  overflow: hidden;
+  height: 16px;
+  font-size: 12px;
+}
+
+.sheet.npc .editor {
+  width: 100%;
+  height: auto;
+  min-height: 130px;
+}
+
+.sheet.npc .section-header {
+  border: 1px;
+  background-color: grey;
+  height: 16px;
+}
+.sheet .skills-list span {
+  flex: none;
+  padding-right: 5px;
+  text-align: right;
+  font-size: 11px;
+  height: 16px;
+  line-height: 16px;
+}
+
+.sheet .skills-list .item-controls {
+  flex: 0 0 auto;
+  height: 16px;
+  font-size: 10px;
+}
+
+.sheet .skill-image {
+  height: 16px;
+  flex: 0 0 16px;
+  background-size: 18px;
+  margin-right: 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.sheet .item-controls {
+  flex: 0 0 auto;
+  height: 16px;
+}
+
+.sheet .sheet-header {
+  flex: 0 0 100px;
+  border-bottom: 2px groove #eeede0;
+  font-family: customSheetFont, "Palatino Linotype", serif;
+  font-size: 12px;
+}
+
+.sheet .sheet-header .attribute-label {
+  font-size: 14px;
+  flex: 0;
+  margin: 0;
+}
+
+.sheet .sheet-header .attribute-value {
+  flex: 0 0 25px;
+  text-align: right;
+}
+
+.sheet .sheet-header .attribute-max {
+  flex: 0 0 20px;
+  text-align: right;
+  padding: 0;
+}
+
+.sheet input[type="text"].read-only:hover,
+.sheet input[type="text"].read-only:focus,
+.sheet input[type="number"].read-only:hover,
+.sheet input[type="number"].read-only:focus {
+  border: 1px solid #111;
+  box-shadow: 0 0 4px black;
+}
+
+.sheet input[type="text"].locked:hover,
+.sheet input[type="text"].locked:focus,
+.sheet input[type="number"].locked:hover,
+.sheet input[type="number"].locked:focus {
+  border: 1px solid transparent;
+  box-shadow: none;
+  cursor: default;
+}
+
+.sheet .sheet-tabs {
+  flex: 0 0 20px;
+  margin-bottom: 5px;
+  font-family: customSheetFont, "Palatino Linotype", serif;
+  font-size: 20px;
+  border: 0;
+}
+
+.sheet .sheet-tabs .item {
+  line-height: 15px;
+  margin: 0 10px;
+  border-bottom: 3px solid #b5b3a4;
+}
+
+.sheet .sheet-tabs .item.active {
+  border-bottom: 3px solid #44191a;
+}
+
+.sheet .window-content {
+  overflow-y: hidden;
+  padding: 5px;
+  font-size: 13px;
+  color: #191813;
+  display: inline;
+}
+
+.sheet .window-content .tab {
+  height: 100%;
+  overflow-y: auto;
+  align-content: flex-start;
+  padding: 0 5px;
+}
+
+.sheet input[type="text"],
+.sheet input[type="number"] {
+  background: none;
+  border: 1px solid transparent;
+}
+
+.sheet input[type="text"]:hover,
+.sheet input[type="text"]:focus,
+.sheet input[type="number"]:hover,
+.sheet input[type="number"]:focus {
+  border: 1px solid #111;
+  box-shadow: 0 0 4px red;
+}
+
+.sheet .editable .rollable:hover,
+.damage-roll.rollable:hover {
+  color: #000;
+  text-shadow: 0 0 10px red;
+  cursor: pointer;
+}
+
+.sheet.actor .sheet-header {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex: 0 0 150px;
+  margin-bottom: 5px;
+}
+.sheet.actor .info-fields {
+  flex: 1;
+  margin: 0 5px;
+  height: fit-content;
+}
+
+.sheet.actor .info-field label {
+  flex: 1;
+  line-height: 20px;
+  font-weight: bold;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: calc(100% - 2px);
+}
+
+.sheet.actor .info-fields .form-group,
+.sheet.actor .info-fields .form-group-stacked {
+  margin: 0;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.sheet.actor .characteristics {
+  display: flex;
+  flex-flow: row wrap;
+  border: 1px solid #c3c3c3;
+  margin: 0 5px;
+  height: fit-content;
+}
+
+.sheet.actor .characteristics .characteristic-box {
+  flex: 0 0 25%;
+  height: 70px;
+  text-align: center;
+  flex-flow: column nowrap;
+  border: 1px solid #c3c3c3;
+}
+
+.sheet.actor .characteristics .characteristic-box .characteristic-label {
+  line-height: 16px;
+  margin: 4px 8px 2px;
+  font-size: 15px;
+  border-bottom: 1px solid #b5b3a4;
+}
+
+.sheet.actor .characteristics .characteristic-box input.characteristic-score {
+  height: 30px;
+  width: 50px;
+  margin: 0 auto;
+  line-height: 32px;
+  font-size: 24px;
+}
+
+.sheet.actor .characteristics .characteristic-box .characteristics-threshold {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  height: 24px;
+  margin: -10px 0 0;
+}
+
+.sheet.actor .characteristics .characteristic-box .characteristics-threshold .characteristics-hard,
+.sheet.actor .characteristics .characteristic-box .characteristics-threshold .characteristics-extreme {
+  flex: 0 0 24px;
+  height: 24px;
+  border-top: 2px groove #eeede0;
+  font-size: 20px;
+}
+
+.sheet.actor .characteristics .characteristic-box .characteristics-threshold .characteristics-hard {
+  border-right: 2px groove #eeede0;
+}
+
+.sheet.actor .characteristics .characteristic-box .characteristics-threshold .characteristics-extreme {
+  border-left: 2px groove #eeede0;
+}
+.sheet.actor img {
+  flex: 0 0 100px;
+  height: 100px;
+  max-width: 100px;
+  margin: 6px;
+  object-fit: contain;
+  border: none;
+}
+
+.sheet.actor.character {
+  min-width: 672px;
+  min-height: 765px;
+}
+
+.sheet .sheet-body {
+  flex: 1;
+  overflow: hidden;
+}
+
+.form-group label {
+  flex: 1;
+  line-height: 20px;
+  font-weight: bold;
+  margin: 0;
+  overflow: hidden;
+}
+
+.form-group .form-fields {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.form-group .form-fields > * {
+  flex: 1;
+}
+
+.form-group .form-fields .flex1 {
+  flex: 1;
+}
+
+.form-group .form-fields .flex2 {
+  flex: 2;
+}
+
+.form-group .form-fields .flex3 {
+  flex: 3;
+}
+
+.form-group .form-fields .flex4 {
+  flex: 4;
+}
+
+.form-group .form-fields > * {
+  margin: 0 3px 0 0;
+}
+
+.form-group .form-fields > *:last-child {
+  margin-right: 0;
+}
+
+.form-group.stacked label {
+  flex: 0 0 100%;
+  margin: 0;
+}
+
+.form-group.stacked label.checkbox {
+  flex: auto;
+  text-align: left;
+}
+
+.sheet.actor ol.skills-list {
+  display: flex;
+  flex-flow: column wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 3px;
+}
+
+.sheet.actor ol.skills-list li.skill {
+  height: 22px;
+  padding: 3px 0;
+}
+
+.sheet.actor ol.skills-list li.skill h4 {
+  flex: 1px;
+  margin: 0;
+  font-size: 11px;
+  line-height: 18px;
+}
+
+.sheet.actor ol.skills-list li.skill .skill-proficiency {
+  flex: 0 0 16px;
+  line-height: 18px;
+}
+
+.sheet.actor ol.skills-list li.skill .skill-ability {
+  flex: 0 0 26px;
+}
+
+.sheet.actor ol.skills-list li.skill .skill-mod {
+  flex: 0 0 20px;
+}
+
+.sheet.actor ol.skills-list li.skill .skill-passive {
+  flex: 0 0 26px;
+  text-align: center;
+  color: #7a7971;
+}
+
+.flexrow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.flexrow > * {
+  flex: 1;
+}
+.flexrow .flex1 {
+  flex: 1;
+}
+.flexrow .flex2 {
+  flex: 2;
+}
+.flexrow .flex3 {
+  flex: 3;
+}
+.flexrow .flex4 {
+  flex: 4;
+}
+.flexcol {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.flexcol > * {
+  flex: 1;
+}
+.flexcol .flex1 {
+  flex: 1;
+}
+.flexcol .flex2 {
+  flex: 2;
+}
+.flexcol .flex3 {
+  flex: 3;
+}
+.flexcol .flex4 {
+  flex: 4;
+}
+
+.chat-card {
+  font-style: normal;
+  font-size: 12px;
+}
+
+.chat-card .card-header {
+  padding: 3px 0;
+  border-top: 2px groove #fff;
+  border-bottom: 2px groove #fff;
+}
+
+.chat-card .card-header img {
+  flex: 0 0 36px;
+  margin: 0;
+  object-fit: contain;
+  border: none;
+}
+
+.chat-card .card-header h3 {
+  flex: 1;
+  margin: 0;
+  line-height: 36px;
+  /* font-family: customSheetFont, "Palatino Linotype", serif; */
+  font-size: 20px;
+  /* color: #4b4a44; */
+}
+
+.chat-card .card-header h3:hover {
+  color: #111;
+  text-shadow: 0 0 10px red;
+}
+
+.chat-card .card-content {
+  display: none;
+  margin: 5px 0;
+}
+
+.chat-card .card-content h3 {
+  font-size: 12px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.chat-card .card-content > * {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+.chat-card .card-buttons {
+  margin: 5px 0;
+}
+
+.chat-card .card-buttons span {
+  display: block;
+  line-height: 28px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.chat-card .card-buttons button {
+  font-size: 12px;
+  height: 24px;
+  line-height: 20px;
+  margin: 2px 0;
+}
+
+.chat-card .card-footer {
+  padding: 3px 0 0;
+  border-top: 2px groove #fff;
+}
+
+.chat-card .card-footer span {
+  border-right: 2px groove #fff;
+  padding: 0 5px 0 0;
+  font-size: 10px;
+}
+
+.chat-card .card-footer span:last-child {
+  border-right: none;
+  padding-right: 0;
+}

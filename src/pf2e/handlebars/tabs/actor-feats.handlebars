@@ -1,0 +1,22 @@
+<div class="tab feats feats-pane" data-group="primary" data-tab="feats">
+  <ol class="actions-list inventory-list directory-list">
+    {{#each actor.feats as |section sid|}}
+      {{#unless (eq section.label 'PF2E.FeatPFSBoonHeader')}}
+        <li class="item action-header">
+          <h3 class="feat-name pf-heading pf-actions">{{stringify section.label}}</h3>
+        </li>
+
+        {{#each section.feats as |feat fid|}}
+          <li class="item feat-item" data-item-id="{{feat._id}}">
+            <div class="item-name rollable">
+              <img class="item-image" src="{{getimg feat.img @root.baseUrl}}" alt="{{feat.name}}">
+              <h4>
+                {{feat.name}}
+              </h4>
+            </div>
+          </li>
+        {{/each}}
+      {{/unless}}
+    {{/each}}
+  </ol>
+</div>
