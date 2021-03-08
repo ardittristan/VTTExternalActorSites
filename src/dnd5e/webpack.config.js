@@ -5,7 +5,7 @@ const path = require("path");
 const { merge } = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-module.exports = merge(process.env.NODE_ENV == "development" ? devOptions : globalOptions, {
+module.exports = merge(process.env.NODE_ENV == "development" ? devOptions() : globalOptions, {
   entry: {
     index: ["babel-polyfill", path.resolve(__dirname, "index.js")],
     populatesheet: path.resolve(__dirname, "populatesheet.js"),

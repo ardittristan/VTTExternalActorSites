@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HtmlWebpackInjectStringPlugin = require("html-webpack-inject-string-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
-module.exports = merge(process.env.NODE_ENV == "development" ? devOptions : globalOptions, {
+module.exports = merge(process.env.NODE_ENV == "development" ? devOptions() : globalOptions, {
   entry: {
     index: ["babel-polyfill", path.resolve(__dirname, "index.js")],
     populatesheet: path.resolve(__dirname, "populatesheet.js"),

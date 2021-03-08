@@ -1,9 +1,10 @@
 const globalOptions = require("../../webpack.config");
 const path = require("path");
 const fs = require("fs");
-const CopyPlugin = require("copy-webpack-plugin");
 const HandlebarsPlugin = require("handlebars-webpack-plugin");
+const AddAssetPlugin = require("add-asset-webpack-plugin");
 const { merge } = require("webpack-merge");
+const csso = require("csso");
 
 module.exports = merge(globalOptions, {
   entry: {
@@ -15,9 +16,6 @@ module.exports = merge(globalOptions, {
     path: path.resolve(__dirname, "../../dist"),
   },
   plugins: [
-    new CopyPlugin({
-      patterns: [{ from: path.resolve(__dirname, "css"), to: path.resolve(__dirname, "../../dist") }],
-    }),
     new HandlebarsPlugin({
       entry: path.resolve(__dirname, "index.handlebars"),
       output: path.resolve(__dirname, "../../dist", "[name].html"),
@@ -42,10 +40,26 @@ module.exports = merge(globalOptions, {
 
           return arr;
         })(path.resolve(__dirname, "../")),
-        path: process.env.WORKFLOW_PATH
+        path: process.env.WORKFLOW_PATH,
       },
       partials: [],
       helpers: {},
     }),
+    ...(() => {
+      /** @type {AddAssetPlugin[]} */
+      let assets = [];
+      let source = path.resolve(__dirname, "css");
+
+      fs.readdirSync(source).forEach((file) => {
+        let output = csso.minify(fs.readFileSync(path.resolve(source, file), { encoding: "utf8" }), {
+          restructure: false,
+          comments: false,
+          sourceMap: true,
+        });
+        assets.push(new AddAssetPlugin(file, output.css), new AddAssetPlugin(file + ".map", output.map.toString()));
+      });
+
+      return assets;
+    })(),
   ],
 });
