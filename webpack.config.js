@@ -2,6 +2,8 @@ const TerserJSPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
+const HtmlReplaceWebpackPlugin = require("html-replace-webpack-plugin")
+const package = require("./package.json");
 
 module.exports = {
   mode: "production",
@@ -49,5 +51,18 @@ module.exports = {
   resolve: {
     extensions: ["*", ".js"],
   },
-  plugins: [new MiniCssExtractPlugin(), new CaseSensitivePathsPlugin()],
+  plugins: [
+    new MiniCssExtractPlugin(),
+    new CaseSensitivePathsPlugin(),
+    new HtmlReplaceWebpackPlugin([
+      {
+        pattern: "<!-- eventemitter -->",
+        replacement: `<script src="https://unpkg.com/eventemitter3@${package.devDependencies.eventemitter3.slice(1)}/umd/eventemitter3.min.js"></script>`,
+      },
+      {
+        pattern: "<!-- jquery -->",
+        replacement: `<script src="https://unpkg.com/jquery@${package.devDependencies.jquery.slice(1)}/dist/jquery.min.js"></script>`
+      }
+    ])
+  ],
 };
