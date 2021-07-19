@@ -41,7 +41,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     document.body.style.setProperty("--d20-black", `url('${baseUrl}icons/svg/d20-black.svg')`);
 
     Hooks.emit("showSheet", sheetTemplate, actorData, baseUrl);
-  } catch {
+  } catch (e) {
+    console.error(e);
     notFoundError("URL not found");
   }
 
