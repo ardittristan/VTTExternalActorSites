@@ -65,7 +65,7 @@ function populateSheet(sheetTemplate, actorData, baseUrl) {
  * @param  {String} baseUrl
  */
 function getData(actorData, baseUrl) {
-  actorData.img = baseUrl + actorData.img;
+  actorData.img = (/https?:\/\//.test(actorData.img) ? "" : baseUrl) + actorData.img;
 
   let items = actorData.items;
 
@@ -175,7 +175,7 @@ function prepareItems(data, baseUrl) {
       item.labels = item.flags?.externalactor?.labels;
 
       // Item details
-      item.img = baseUrl + item.img || baseUrl + "icons/svg/mystery-man.svg";
+      item.img = (/https?:\/\//.test(item.img) ? "" : baseUrl) + (item.img || "icons/svg/mystery-man.svg");
       item.isStack = item.data.quantity ? item.data.quantity > 1 : false;
 
       // Item usage

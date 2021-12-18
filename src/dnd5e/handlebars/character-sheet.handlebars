@@ -123,7 +123,7 @@
             <span class="ability-mod" title="Modifier">{{numberFormat ability.mod decimals=0 sign=true}}</span>
             <input type="hidden" name="data.abilities.{{id}}.proficient" value="{{ability.proficient}}" data-dtype="Number" />
             <a class="proficiency-toggle ability-proficiency" title="{{ stringify 'Proficiency' }}">{{{ability.icon}}}</a>
-            <span class="ability-save" title="Saving Throw">{{numberFormat ability.save decimals=0 sign=true}}</span>
+            <span class="ability-save" title="Saving Throw">{{#if ability.save}}{{numberFormat ability.save decimals=0 sign=true}}{{else}}{{numberFormat ability.mod decimals=0 sign=true}}{{/if}}</span>
           </div>
         </li>
         {{/each}}
@@ -137,8 +137,8 @@
           <a class="proficiency-toggle skill-proficiency" title="{{skill.hover}}">{{{skill.icon}}}</a>
           <h4 class="skill-name rollable">{{skill.label}}</h4>
           <span class="skill-ability">{{skill.ability}}</span>
-          <span class="skill-mod">{{numberFormat skill.total decimals=0 sign=true}}</span>
-          <span class="skill-passive">({{skill.passive}})</span>
+          <span class="skill-mod">{{numberFormat (or skill.total skill.mod) decimals=0 sign=true}}</span>
+          <span class="skill-passive">({{or skill.passive (add 10 skill.mod)}})</span>
         </li>
         {{/each}}
       </ul>
