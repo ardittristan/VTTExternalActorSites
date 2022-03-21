@@ -35,7 +35,10 @@ module.exports = merge(process.env.NODE_ENV == "development" ? devOptions() : gl
     }),
     new HtmlWebpackInjectStringPlugin({
       search: "<!-- headInject -->",
-      inject: `<script src="${process.env.WORKFLOW_PATH || ""}/TextEditor.js"></script>`,
+      inject: `
+<script src="${process.env.WORKFLOW_PATH || ""}/TextEditor.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tooltipster@4.2.8/dist/js/tooltipster.bundle.js"></script>
+`,
     }),
   ],
 });

@@ -5,6 +5,7 @@ import { getContainerMap } from "./libs/container";
 import { indexBulkItemsById, itemsFromActorData, stacks, calculateBulk, formatBulk, defaultBulkConfig } from "./libs/bulk";
 import { calculateEncumbrance } from "./libs/encumbrance";
 import { ChatData } from "./libs/ChatData";
+import { deepClone } from "../lib";
 
 TextEditor._decoder = document.createElement("textarea");
 
@@ -433,7 +434,7 @@ function prepareItems(actorData) {
       const spellProficiency = ProficiencyModifier.fromLevelAndRank(actorData.data.details.level.value, spellRank).modifier;
       const spellAbl = i.data.ability.value || "int";
       i.data.spelldc.mod = actorData.data.abilities[spellAbl].mod;
-      i.data.spelldc.breakdown = `10 + ${spellAbl} modifier(${actorData.data.abilities[spellAbl].mod}) + proficiency(${spellProficiency}) + item bonus(${i.data.item.value})`;
+      i.data.spelldc.breakdown = `10 + ${spellAbl} modifier(${actorData.data.abilities[spellAbl].mod}) + proficiency(${spellProficiency}) + item bonus(${i.data.item?.value})`;
 
       i.data.spelldc.icon = getProficiencyIcon(i.data.proficiency.value);
       i.data.spelldc.hover = PF2E.proficiencyLevels[i.data.proficiency.value];
@@ -929,7 +930,7 @@ function preparedSpellSlots(spellcastingEntry, spellbook, actorData) {
         if (entrySlot && entrySlot.id) {
           const item = actorData.items.find((item) => item._id === entrySlot.id);
           if (item) {
-            const itemCopy = JSON.parse(JSON.stringify(item));
+            const itemCopy = deepClone(item);
             if (entrySlot.expended) {
               itemCopy.expended = true;
             } else {

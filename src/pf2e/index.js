@@ -10,7 +10,7 @@ Hooks.emit("start");
 
 // when document is loaded, add sheet
 document.addEventListener("DOMContentLoaded", async function () {
-  document.body.style.setProperty("--headerHeight", $("body > div.header").height() + "px");
+  document.body.style.setProperty("--headerHeight", $("body > div").height() + "px");
 
   if (window.location.href.split(/\?(.+)/)[1] == undefined) {
     notFoundError("No Link Entered");
